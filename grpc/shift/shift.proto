@@ -6,9 +6,9 @@ service Shift {
   rpc GetShift (GetShiftMessage) returns (ShiftResponse) {}
 }
 message GetShiftMessage {
-  string target_user = 1;
+  uint64 target_user = 1;
 }
 message ShiftResponse {
   string name = 1;
-  string shift = 2;
+  uint64 shift = 2;
 }

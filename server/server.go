@@ -8,6 +8,7 @@ import (
 
 	"shift-api/service"
 
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"google.golang.org/grpc"
 )
 
@@ -17,7 +18,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	server := grpc.NewServer()
-	shiftService := &service.ShiftService{}
+	shiftService := &service.ShiftMySQLService{}
 	// 実行したい実処理をseverに登録する
 	pb.RegisterShiftServer(server, shiftService)
 	server.Serve(listenPort)

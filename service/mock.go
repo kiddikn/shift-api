@@ -7,24 +7,24 @@ import (
 	pb "shift-api/grpc/shift/shift-api/grpc/shift"
 )
 
-// ShiftService is the service
-type ShiftService struct {
+// ShiftMockService is the service
+type ShiftMockService struct {
 }
 
 // GetShift can get user shift
-func (s *ShiftService) GetShift(ctx context.Context, message *pb.GetShiftMessage) (*pb.ShiftResponse, error) {
+func (s *ShiftMockService) GetShift(ctx context.Context, message *pb.GetShiftMessage) (*pb.ShiftResponse, error) {
 	switch message.TargetUser {
-	case "1":
+	case 1:
 		//まずはテスト
 		return &pb.ShiftResponse{
 			Name:  "工藤新一",
-			Shift: "am",
+			Shift: 1,
 		}, nil
-	case "2":
+	case 2:
 		//まずはテスト
 		return &pb.ShiftResponse{
 			Name:  "毛利蘭",
-			Shift: "pm",
+			Shift: 2,
 		}, nil
 	}
 	return nil, errors.New("Not Found Your Shift")
