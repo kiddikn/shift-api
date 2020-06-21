@@ -1,0 +1,14 @@
+syntax = "proto3";
+package shift;
+option go_package="rpc/shift";
+
+service Shift {
+  rpc GetShift (GetShiftMessage) returns (ShiftResponse) {}
+}
+message GetShiftMessage {
+  uint64 target_user = 1;
+}
+message ShiftResponse {
+  string name = 1;
+  uint64 shift = 2;
+}
