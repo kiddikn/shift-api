@@ -7,6 +7,7 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/jinzhu/gorm v1.9.12
 	github.com/twitchtv/twirp v5.12.0+incompatible
+	go.uber.org/zap v1.15.0
 	google.golang.org/grpc v1.29.1
 	google.golang.org/protobuf v1.24.0
 )
