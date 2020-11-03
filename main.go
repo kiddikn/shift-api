@@ -13,7 +13,9 @@ func main() {
 	ctx := context.Background()
 
 	// Sets your Google Cloud Platform project ID.
-	projectID := "otakeslsc-215813"
+	// 環境変数から取得
+	//	projectID := "otakeslsc-215813"
+	projectID := "xx"
 
 	// Creates a client.
 	client, err := pubsub.NewClient(ctx, projectID)
